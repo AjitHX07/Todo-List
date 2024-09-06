@@ -1,0 +1,22 @@
+header {
+    background-color: #1e2a38;
+    padding: 10px;
+
+}
+
+nav a {
+    color: #e0e0e0;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: rgba(51, 51, 51, 0.164);
+}

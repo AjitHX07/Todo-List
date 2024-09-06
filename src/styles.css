@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.todo-container.dark-mode {
+    background-color: #1e2a38;
+}
+
+.task-input.dark-mode {
+    background-color: #243447;
+}
+
+.task-item.dark-mode {
+    background-color: #2b3e50;
+}
+
+.add-button.dark-mode {
+    background-color: #3b5998;
+}
+
+.remove-button.dark-mode {
+    background-color: #ff4c4c;
+}
+
+toggle-dark-mode {
+    background-color: #007bff;
+    color: rgb(120, 96, 96);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #136ac7;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
