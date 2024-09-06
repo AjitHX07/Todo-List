@@ -16,7 +16,6 @@ export class LoginComponent {
   password: string = '';
 
   constructor(private router: Router, private authService: AuthService) { }
-
   login(): void {
     if (this.authService.login(this.username, this.password)) {
       this.router.navigate(['/todo']);

@@ -15,7 +15,7 @@ export class TodoComponent implements OnInit {
   tasks: { task: string; completed: boolean; category?: string }[] = [];
   editingIndex: number | null = null;
   editedTask: string = '';
-  categories: string[] = ['Work', 'Personal', 'Others']; // Example categories
+  categories: string[] = ['Work', 'Personal', 'Others'];
   selectedCategory: string = '';
 
   constructor(private todoService: TodoService) { }
@@ -29,7 +29,7 @@ export class TodoComponent implements OnInit {
       this.todoService.addTask({ task: this.task, completed: false, category: this.selectedCategory });
       this.task = '';
       this.selectedCategory = '';
-      this.tasks = this.todoService.getTasks(); // Refresh tasks
+      this.tasks = this.todoService.getTasks();
     }
   }
 
@@ -41,20 +41,20 @@ export class TodoComponent implements OnInit {
   updateTask(): void {
     if (this.editedTask.trim() && this.editingIndex !== null) {
       this.tasks[this.editingIndex] = { ...this.tasks[this.editingIndex], task: this.editedTask };
-      this.todoService.saveTasks(); // Update tasks
+      this.todoService.saveTasks();
       this.editingIndex = null;
       this.editedTask = '';
-      this.tasks = this.todoService.getTasks(); // Refresh tasks
+      this.tasks = this.todoService.getTasks();
     }
   }
 
   toggleCompletion(index: number): void {
     this.tasks[index].completed = !this.tasks[index].completed;
-    this.todoService.saveTasks(); // Update tasks
+    this.todoService.saveTasks();
   }
 
   removeTask(index: number): void {
     this.todoService.removeTask(index);
-    this.tasks = this.todoService.getTasks(); // Refresh tasks
+    this.tasks = this.todoService.getTasks();
   }
 }

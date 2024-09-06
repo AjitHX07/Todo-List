@@ -39,7 +39,6 @@ export class AuthService implements CanActivate {
     }
   }
 
-
   isAuthenticated(): boolean {
     return this.loggedIn;
   }
@@ -47,9 +46,6 @@ export class AuthService implements CanActivate {
   logout(): void {
     this.loggedIn = false;
     this.router.navigate(['/login']);
-
-
-
   }
 
 
@@ -61,8 +57,5 @@ export class AuthService implements CanActivate {
       return false;
     }
   }
-
-
-
 
 }

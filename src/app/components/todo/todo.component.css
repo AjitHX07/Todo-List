@@ -91,6 +91,8 @@ body {
     flex: 1;
     font-size: 16px;
     color: #333333;
+    font-weight: 600;
+
 }
 
 .completed-task {
@@ -116,8 +118,6 @@ body {
     background-color: #3c454e;
     color: #fff;
 }
-
-
 
 .task-item .remove-button {
     background-color: #dc3545;

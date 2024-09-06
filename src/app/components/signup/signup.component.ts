@@ -20,6 +20,6 @@ export class SignupComponent {
 
   signup(): void {
     this.authService.signup(this.username, this.email, this.password);
-    this.router.navigate(['/login']);  // Correct route after signup
+    this.router.navigate(['/login']);
   }
 }
