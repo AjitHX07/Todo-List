@@ -1,27 +1,93 @@
-# TodoApp
+# Todo List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+## Overview
 
-## Development server
+Welcome to the **Todo List Application**, a modern and intuitive app designed to help you manage your tasks efficiently. Whether you're tracking work projects, personal tasks, or anything in between, this app provides a clean and user-friendly interface to keep you organized.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Alt text](https://github.com/AjitHX07/Todo-List/blob/main/todolist.png))
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Task Management**: Add, edit, and remove tasks with ease.
+- **Task Categories**: Organize tasks using predefined categories like Work, Personal, and Others.
+- **Task Completion**: Mark tasks as completed or pending with a simple checkbox.
+- **Responsive Design**: Fully responsive layout for a seamless experience on any device.
+- **Enhanced UI/UX**: Modern design with smooth animations and intuitive controls.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+To get started with the Todo List Application, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+Make sure you have the following installed on your machine:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
 
-## Further help
+### Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/todo-list-app.git
+
+2. **Navigate into the project directory::**
+
+   ```bash
+   cd todo-list-app
+
+3. **Install dependencies:**
+
+   ```bash
+   npm install
+
+4. **Start the development server:**
+
+   ```bash
+   ng serve
+
+5. **Open your browser and navigate:**
+
+   ```bash
+   http://localhost:4200
+ 
+### Usage
+ **Adding Tasks**
+- Enter your task description in the input field.
+- Select a category from the dropdown menu.
+- Click on the "Add Task" button to add the task to your list.
+
+ **Editing Tasks**
+- Click the "Edit" button next to a task to enter editing mode.
+- Modify the task description and save your changes.
+
+** Completing Tasks**
+- Use the checkbox to mark tasks as completed or pending.
+
+## Contributing
+
+We encourage contributions to improve the Todo List Application! To contribute, please follow these steps:
+
+1. **Fork the repository** and create a new branch for your feature or fix.
+2. **Make your changes** and test them thoroughly.
+3. **Submit a pull request** with a detailed description of your changes.
+
+For more detailed contribution guidelines, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- **Inspiration**: Thanks to the open-source community for their continuous innovation and support.
+- **Libraries**: Special thanks to Angular for its robust framework and Tailwind CSS for its stylish utility-first approach.
+
+## Contact
+
+For any questions or support, please reach out:
+
+- **Email**: ajith.santhosh.mailbox@gmail.com
+- **GitHub Issues**: [Submit an issue](https://github.com/your-username/todo-list-app/issues)
