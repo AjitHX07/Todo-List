@@ -4,11 +4,7 @@
 
 Welcome to the **Todo List Application**, a modern and intuitive app designed to help you manage your tasks efficiently. Whether you're tracking work projects, personal tasks, or anything in between, this app provides a clean and user-friendly interface to keep you organized.
 
-<<<<<<< HEAD
-![Alt text](https://github.com/AjitHX07/Todo-List/blob/main/todolist.png))
-=======
-![Alt text](https://github.com/AjitHX07/Todo-List/blob/main/todolist.png)
->>>>>>> origin/main
+![project image](https://github.com/AjitHX07/Todo-List/blob/main/todolist.png)
 
 
 ## Features
@@ -56,7 +52,7 @@ Make sure you have the following installed on your machine:
 
    ```bash
    http://localhost:4200
- 
+
 ### Usage
  **Adding Tasks**
 - Enter your task description in the input field.
