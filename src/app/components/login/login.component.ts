@@ -18,11 +18,8 @@ export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) { }
 
   login(): void {
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
-
-    if (this.username === 'admin' && this.password === 'admin') {
-      this.router.navigate(['/todo']); // Navigate to the todo page upon successful login
+    if (this.authService.login(this.username, this.password)) {
+      this.router.navigate(['/todo']);
     } else {
       alert('Invalid credentials!');
     }

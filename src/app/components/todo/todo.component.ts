@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../../services/todo.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './todo.component.html',
-  styleUrl: './todo.component.css'
+  styleUrls: ['./todo.component.css']
 })
-export class TodoComponent {
+export class TodoComponent implements OnInit {
   task: string = '';
   tasks: string[] = [];
 

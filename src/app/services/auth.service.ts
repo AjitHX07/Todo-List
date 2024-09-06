@@ -15,26 +15,30 @@ export class AuthService implements CanActivate {
 
   constructor(private router: Router) { }
 
-  // Mock signup method (replace with API call)
   signup(username: string, email: string, password: string): void {
-    // Here you can send the user data to your backend API
-    localStorage.setItem('user', JSON.stringify({ username, email }));
+    // Save the user details including the password
+    localStorage.setItem('user', JSON.stringify({ username, email, password }));
     alert('Signup successful!');
     this.router.navigate(['/login']);
   }
 
-  // Mock login method (replace with API call)
   login(username: string, password: string): boolean {
-    // Normally you'd check credentials against the backend here
-    const user = JSON.parse(localStorage.getItem('user')!);
+    const userData = localStorage.getItem('user');
 
-    if (user && username === user.username && password === 'admin') {
+    if (!userData) {
+      return false;
+    }
+
+    const user = JSON.parse(userData);
+
+    if (username === user.username && password === user.password) {
       this.loggedIn = true;
       return true;
     } else {
       return false;
     }
   }
+
 
   isAuthenticated(): boolean {
     return this.loggedIn;
@@ -50,14 +54,13 @@ export class AuthService implements CanActivate {
 
 
   canActivate(): boolean {
-    if (this.authService.isAuthenticated()) {
+    if (this.isAuthenticated()) {
       return true;
     } else {
       this.router.navigate(['/login']);
       return false;
     }
   }
-
 
 
 

@@ -19,10 +19,7 @@ export class SignupComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   signup(): void {
-    // Call the AuthService to handle the signup logic
     this.authService.signup(this.username, this.email, this.password);
-
-    // After successful signup, navigate to the '/todo' route
-    this.router.navigate(['/todo']);
+    this.router.navigate(['/login']);  // Correct route after signup
   }
 }

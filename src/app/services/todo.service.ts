@@ -3,35 +3,37 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TodoService {
   private tasks: string[] = [];
 
+
   constructor() {
-    this.loadFromLocalStorage();
+    this.loadTasks();
   }
 
   getTasks(): string[] {
     return this.tasks;
   }
 
-  addTask(task: string): void {
+  addTask(task: string) {
     this.tasks.push(task);
-    this.saveToLocalStorage();
+    this.saveTasks();
   }
 
-  removeTask(index: number): void {
+  removeTask(index: number) {
     this.tasks.splice(index, 1);
-    this.saveToLocalStorage();
+    this.saveTasks();
   }
 
-  private saveToLocalStorage(): void {
+  private saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
-  private loadFromLocalStorage(): void {
-    const savedTasks = localStorage.getItem('tasks');
-    if (savedTasks) {
-      this.tasks = JSON.parse(savedTasks);
+  private loadTasks() {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
     }
   }
 }
