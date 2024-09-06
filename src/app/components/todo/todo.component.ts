@@ -12,7 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class TodoComponent implements OnInit {
   task: string = '';
-  tasks: string[] = [];
+  tasks: { task: string; completed: boolean; category?: string }[] = [];
+  editingIndex: number | null = null;
+  editedTask: string = '';
+  categories: string[] = ['Work', 'Personal', 'Others']; // Example categories
+  selectedCategory: string = '';
 
   constructor(private todoService: TodoService) { }
 
@@ -22,12 +26,35 @@ export class TodoComponent implements OnInit {
 
   addTask(): void {
     if (this.task.trim()) {
-      this.todoService.addTask(this.task);
+      this.todoService.addTask({ task: this.task, completed: false, category: this.selectedCategory });
       this.task = '';
+      this.selectedCategory = '';
+      this.tasks = this.todoService.getTasks(); // Refresh tasks
     }
+  }
+
+  editTask(index: number): void {
+    this.editingIndex = index;
+    this.editedTask = this.tasks[index].task;
+  }
+
+  updateTask(): void {
+    if (this.editedTask.trim() && this.editingIndex !== null) {
+      this.tasks[this.editingIndex] = { ...this.tasks[this.editingIndex], task: this.editedTask };
+      this.todoService.saveTasks(); // Update tasks
+      this.editingIndex = null;
+      this.editedTask = '';
+      this.tasks = this.todoService.getTasks(); // Refresh tasks
+    }
+  }
+
+  toggleCompletion(index: number): void {
+    this.tasks[index].completed = !this.tasks[index].completed;
+    this.todoService.saveTasks(); // Update tasks
   }
 
   removeTask(index: number): void {
     this.todoService.removeTask(index);
+    this.tasks = this.todoService.getTasks(); // Refresh tasks
   }
 }

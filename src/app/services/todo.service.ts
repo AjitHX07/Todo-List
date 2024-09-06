@@ -3,20 +3,18 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-
 export class TodoService {
-  private tasks: string[] = [];
-
+  private tasks: { task: string; completed: boolean; category?: string }[] = [];
 
   constructor() {
     this.loadTasks();
   }
 
-  getTasks(): string[] {
+  getTasks(): { task: string; completed: boolean; category?: string }[] {
     return this.tasks;
   }
 
-  addTask(task: string) {
+  addTask(task: { task: string; completed: boolean; category?: string }) {
     this.tasks.push(task);
     this.saveTasks();
   }
@@ -26,7 +24,7 @@ export class TodoService {
     this.saveTasks();
   }
 
-  private saveTasks() {
+  saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
